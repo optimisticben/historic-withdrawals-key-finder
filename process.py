@@ -13,7 +13,7 @@ for i in range(0,len(obj)):
   # Coerce the keys to a list so that you can take the first element
   entryKey = list(obj[i].keys())[0]
   print(entryKey)
-  outData[entryKey] = obj[i][entryKey]
+  outData[entryKey.lower()] = obj[i][entryKey]
 
 json_object = json.dumps(outData, indent = 4)
 
