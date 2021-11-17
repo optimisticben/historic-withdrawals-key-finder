@@ -1,7 +1,10 @@
 from flask import Flask, abort, jsonify
+from flask_cors import CORS
 import json
 
 app = Flask(__name__)
+CORS(app)
+
 def main():
     print("Starting up!")
 
@@ -20,6 +23,6 @@ def keyLookup(key_id):
     lookup_key_id = key_id.lower()
     if lookup_key_id in keyData:
         addressData = keyData[lookup_key_id]
-        return jsonify(addressData[0])
+        return jsonify(addressData)
     else:
         return abort(404)
