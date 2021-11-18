@@ -15,7 +15,7 @@ def loadData(filename):
     obj = json.loads(data)
     return obj
 
-keyData = loadData('fe9f9eba-process-lowercase.json')
+keyData = loadData('ovm1_withdrawals_111521-kovan.json')
 
 @app.route('/<string:key_id>')
 def keyLookup(key_id):
